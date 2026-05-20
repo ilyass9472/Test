@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 A Special Gift For You Roeya💌</title>
+    <style>
+        :root {
+            --pink: #ff6b9d;
+            --pink-light: #ffb8d0;
+            --pink-dark: #e8537c;
+            --gold: #f7c948;
+            --cream: #fff5f7;
+            --rose: #ff8fab;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 25%, #fce4ec 50%, #f8bbd0 75%, #fce4ec 100%);
+            background-size: 400% 400%;
+            animation: bgShift 12s ease infinite;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            overflow-x: hidden;
+            cursor: default;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        @keyframes bgShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            25% {
+                background-position: 100% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            75% {
+                background-position: 0% 100%;
+            }
+        }
+
+        /* ============ FLOATING PARTICLES ============ */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            animation: floatUp linear infinite;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .particle.heart {
+            font-size: 18px;
+            animation-duration: 8s;
+        }
+        .particle.sparkle {
+            font-size: 12px;
+            animation-duration: 5s;
+        }
+        .particle.star {
+            font-size: 14px;
+            animation-duration: 7s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(110vh) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+                transform: translateY(90vh) rotate(30deg) scale(1);
+            }
+            40% {
+                opacity: 0.7;
+                transform: translateY(50vh) rotate(120deg) scale(1.2);
+            }
+            70% {
+                opacity: 0.3;
+                transform: translateY(20vh) rotate(250deg) scale(0.8);
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* ============ MAIN CONTAINER ============ */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* ============ TITLE ============ */
+        .title-area {
+            text-align: center;
+            animation: titleBounce 2s ease-in-out infinite;
+        }
+
+        .title-area .subtitle {
+            font-size: 1rem;
+            color: #d4687c;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            font-family: 'Georgia', serif;
+        }
+
+        .title-area h1 {
+            font-size: 2.4rem;
+            color: #c0395c;
+            font-weight: bold;
+            text-shadow: 0 3px 12px rgba(200, 60, 90, 0.3);
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+
+        @keyframes titleBounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* ============ GIFT CARD AREA ============ */
+        .gift-wrapper {
+            position: relative;
+            perspective: 1200px;
+        }
+
+        .gift-card {
+            position: relative;
+            width: 340px;
+            height: 420px;
+            background: linear-gradient(180deg, #fff 0%, #fff5f7 40%, #ffe0e8 100%);
+            border-radius: 28px;
+            box-shadow: var(--shadow), 0 0 0 8px #ffe4ec, 0 0 0 12px #fff, 0 0 0 16px #ffd1dc;
+            overflow: visible;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: cardFloat 4s ease-in-out infinite;
+        }
+
+        .gift-card.revealed {
+            animation: cardReveal 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes cardFloat {
+            0%,
+            100% {
+                transform: translateY(0) rotateX(2deg);
+            }
+            50% {
+                transform: translateY(-10px) rotateX(-2deg);
+            }
+        }
+
+        @keyframes cardReveal {
+            0% {
+                transform: translateY(0) rotateX(2deg) scale(1);
+            }
+            30% {
+                transform: translateY(-20px) rotateX(-5deg) scale(1.04);
+            }
+            60% {
+                transform: translateY(-30px) rotateX(0deg) scale(1.06);
+            }
+            100% {
+                transform: translateY(-15px) rotateX(0deg) scale(1.03);
+                box-shadow: 0 25px 60px rgba(255, 107, 157, 0.5), 0 0 0 8px #ffe4ec, 0 0 0 12px #fff,
+                    0 0 0 16px #ffd1dc, 0 0 80px rgba(255, 150, 180, 0.4);
+            }
+        }
+
+        /* ============ RIBBON / BOW ============ */
+        .bow-container {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .bow {
+            position: relative;
+            width: 80px;
+            height: 70px;
+        }
+
+        .bow-loop {
+            position: absolute;
+            width: 42px;
+            height: 55px;
+            background: radial-gradient(ellipse at center, #ff7da8 0%, #e8537c 70%, #c0395c 100%);
+            border-radius: 50% 50% 45% 45%;
+            box-shadow: inset 0 -8px 15px rgba(0, 0, 0, 0.15), 0 6px 18px rgba(200, 60, 90, 0.4);
+        }
+        .bow-loop.left {
+            left: 2px;
+            transform: rotate(-22deg) skewY(-5deg);
+            border-radius: 55% 45% 50% 45%;
+        }
+        .bow-loop.right {
+            right: 2px;
+            transform: rotate(22deg) skewY(5deg);
+            border-radius: 45% 55% 45% 50%;
+        }
+        .bow-center {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: radial-gradient(circle, #ffd700 0%, #f0a500 60%, #c78500 100%);
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            box-shadow: 0 3px 10px rgba(180, 120, 30, 0.5), 0 0 20px rgba(255, 200, 60, 0.5);
+        }
+        .bow-tail-left,
+        .bow-tail-right {
+            position: absolute;
+            bottom: -18px;
+            width: 16px;
+            height: 32px;
+            background: linear-gradient(180deg, #e8537c, #c0395c);
+            border-radius: 0 0 40% 40%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .bow-tail-left {
+            left: 18px;
+            transform: rotate(-15deg);
+        }
+        .bow-tail-right {
+            right: 18px;
+            transform: rotate(15deg);
+        }
+
+        /* ============ TAB PULLS ============ */
+        .tabs-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .tab-pull {
+            position: absolute;
+            pointer-events: auto;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Georgia', serif;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-pull.tab-1 {
+            top: 28%;
+            right: -38px;
+            width: 44px;
+            height: 90px;
+            background: linear-gradient(180deg, #ff7da8, #e8537c, #d9446b);
+            border-radius: 0 16px 16px 0;
+            box-shadow: 0 6px 20px rgba(220, 60, 90, 0.4);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            animation: tabWiggle1 3s ease-in-out infinite;
+        }
+        .tab-pull.tab-1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 10px solid #ff7da8;
+            margin-left: -10px;
+        }
+
+        @keyframes tabWiggle1 {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-6px);
+            }
+        }
+
+        .tab-pull.tab-2 {
+            bottom: 20%;
+            left: -38px;
+            width: 44px;
+            height: 90px;
+            background: linear-gradient(180deg, #ff9db5, #f06280, #d9446b);
+            border-radius: 16px 0 0 16px;
+            box-shadow: 0 6px 20px rgba(220, 60, 90, 0.4);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            animation: tabWiggle2 3.5s ease-in-out infinite;
+        }
+        .tab-pull.tab-2::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 10px solid #ff9db5;
+            margin-right: -10px;
+        }
+
+        @keyframes tabWiggle2 {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(6px);
+            }
+        }
+
+        .tab-pull.tab-3 {
+            bottom: -38px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 44px;
+            background: linear-gradient(90deg, #ffb347, #ff8c42, #ff6b3d);
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 6px 20px rgba(255, 130, 60, 0.5);
+            letter-spacing: 2px;
+            font-size: 0.78rem;
+            animation: tabWiggle3 2.8s ease-in-out infinite;
+        }
+        .tab-pull.tab-3::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 10px solid #ffb347;
+            margin-top: -10px;
+        }
+
+        @keyframes tabWiggle3 {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Pulled states */
+        .tab-pull.pulled {
+            opacity: 0.5;
+            pointer-events: none;
+            filter: brightness(0.7);
+            transform: scale(0.85) !important;
+            animation: none !important;
+            transition: all 0.5s ease;
+        }
+        .tab-pull.tab-1.pulled {
+            transform: translateX(10px) scale(0.85) !important;
+        }
+        .tab-pull.tab-2.pulled {
+            transform: translateX(-10px) scale(0.85) !important;
+        }
+        .tab-pull.tab-3.pulled {
+            transform: translateX(-50%) translateY(10px) scale(0.85) !important;
+        }
+
+        /* ============ CARD INNER CONTENT ============ */
+        .card-inner {
+            position: absolute;
+            inset: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .card-illustration {
+            font-size: 70px;
+            animation: heartBeat 1.2s ease-in-out infinite;
+            filter: drop-shadow(0 8px 16px rgba(255, 107, 157, 0.4));
+            margin-bottom: 10px;
+        }
+
+        @keyframes heartBeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            15% {
+                transform: scale(1.18);
+            }
+            30% {
+                transform: scale(1);
+            }
+            45% {
+                transform: scale(1.12);
+            }
+            60% {
+                transform: scale(1);
+            }
+        }
+
+        .card-inner .card-label {
+            font-size: 0.85rem;
+            color: #c07080;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .card-inner .card-hint {
+            font-size: 0.7rem;
+            color: #d4a0ac;
+            letter-spacing: 2px;
+        }
+
+        /* Pull counter dots */
+        .pull-indicators {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .pull-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ffd1dc;
+            border: 2px solid #ffb8c8;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .pull-dot.done {
+            background: #ff6b9d;
+            border-color: #e8537c;
+            box-shadow: 0 0 14px rgba(255, 107, 157, 0.7);
+            animation: dotGlow 0.6s ease-out;
+        }
+        @keyframes dotGlow {
+            0% {
+                transform: scale(0.3);
+                box-shadow: 0 0 30px rgba(255, 107, 157, 1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 14px rgba(255, 107, 157, 0.7);
+            }
+        }
+
+        /* ============ MESSAGE OVERLAY ============ */
+        .message-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .message-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .message-card {
+            background: linear-gradient(160deg, #ffffff 0%, #fff5f7 30%, #ffe8ef 100%);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            max-width: 420px;
+            width: 90%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 0 6px #ffd1dc, 0 0 0 10px #fff, 0 0 0 14px #ffe4ec;
+            transform: scale(0.5) rotateY(40deg);
+            opacity: 0;
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: visible;
+        }
+        .message-overlay.active .message-card {
+            transform: scale(1) rotateY(0deg);
+            opacity: 1;
+        }
+
+        .message-card .msg-icon {
+            font-size: 80px;
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+            transform: scale(0);
+        }
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotate(-30deg);
+            }
+            60% {
+                transform: scale(1.3) rotate(5deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .message-card h2 {
+            font-size: 1.8rem;
+            color: #c0395c;
+            margin: 16px 0 8px;
+            font-family: 'Georgia', serif;
+            animation: fadeSlideIn 0.6s ease forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .message-card .msg-text {
+            font-size: 1rem;
+            color: #6b4c5a;
+            line-height: 1.7;
+            margin: 10px 0 20px;
+            animation: fadeSlideIn 0.6s ease forwards;
+            animation-delay: 0.75s;
+            opacity: 0;
+            transform: translateY(20px);
+            font-style: italic;
+        }
+        @keyframes fadeSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-btn {
+            background: linear-gradient(135deg, #ff7da8, #e8537c);
+            color: #fff;
+            border: none;
+            padding: 12px 36px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            letter-spacing: 2px;
+            box-shadow: 0 8px 24px rgba(220, 60, 90, 0.4);
+            transition: all 0.3s ease;
+            animation: fadeSlideIn 0.6s ease forwards;
+            animation-delay: 0.9s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .close-btn:hover {
+            background: linear-gradient(135deg, #ff6090, #d9446b);
+            box-shadow: 0 12px 30px rgba(220, 60, 90, 0.6);
+            transform: translateY(-3px) scale(1.04);
+        }
+        .close-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ============ CONFETTI BURST ============ */
+        .confetti-piece {
+            position: fixed;
+            z-index: 200;
+            pointer-events: none;
+            animation: confettiFall linear forwards;
+        }
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-120vh) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(900deg) scale(0.3);
+                opacity: 0;
+            }
+        }
+
+        /* ============ SPARKLE BURST AT PULL ============ */
+        .spark-burst {
+            position: absolute;
+            pointer-events: none;
+            z-index: 50;
+            animation: sparkPop 0.8s ease-out forwards;
+        }
+        @keyframes sparkPop {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 420px) {
+            .gift-card {
+                width: 280px;
+                height: 360px;
+                border-radius: 22px;
+                box-shadow: 0 8px 30px rgba(255, 107, 157, 0.3), 0 0 0 6px #ffe4ec, 0 0 0 9px #fff,
+                    0 0 0 12px #ffd1dc;
+            }
+            .card-inner {
+                inset: 24px 30px;
+            }
+            .card-illustration {
+                font-size: 50px;
+            }
+            .tab-pull.tab-1 {
+                right: -30px;
+                width: 34px;
+                height: 70px;
+                font-size: 0.65rem;
+                border-radius: 0 12px 12px 0;
+            }
+            .tab-pull.tab-2 {
+                left: -30px;
+                width: 34px;
+                height: 70px;
+                font-size: 0.65rem;
+                border-radius: 12px 0 0 12px;
+            }
+            .tab-pull.tab-3 {
+                bottom: -30px;
+                width: 80px;
+                height: 34px;
+                font-size: 0.65rem;
+                border-radius: 0 0 12px 12px;
+            }
+            .bow-container {
+                top: -38px;
+            }
+            .bow {
+                width: 60px;
+                height: 52px;
+            }
+            .bow-loop {
+                width: 32px;
+                height: 42px;
+            }
+            .bow-center {
+                width: 18px;
+                height: 18px;
+            }
+            .bow-tail-left,
+            .bow-tail-right {
+                width: 12px;
+                height: 24px;
+                bottom: -14px;
+            }
+            .message-card {
+                padding: 28px 20px;
+                border-radius: 18px;
+            }
+            .message-card h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating particles background -->
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Title -->
+        <div class="title-area">
+            <p class="subtitle">✨ A Little Something ✨</p>
+            <h1>For You 💖</h1>
+        </div>
+
+        <!-- Gift Card -->
+        <div class="gift-wrapper">
+            <div class="gift-card" id="giftCard">
+                <!-- Bow -->
+                <div class="bow-container">
+                    <div class="bow">
+                        <div class="bow-loop left"></div>
+                        <div class="bow-loop right"></div>
+                        <div class="bow-center"></div>
+                        <div class="bow-tail-left"></div>
+                        <div class="bow-tail-right"></div>
+                    </div>
+                </div>
+
+                <!-- 3 Pull Tabs -->
+                <div class="tabs-container">
+                    <div class="tab-pull tab-1" data-tab="1" id="tab1">PULL</div>
+                    <div class="tab-pull tab-2" data-tab="2" id="tab2">PULL</div>
+                    <div class="tab-pull tab-3" data-tab="3" id="tab3">PULL ME</div>
+                </div>
+
+                <!-- Card Inner -->
+                <div class="card-inner">
+                    <div class="card-illustration">🎁</div>
+                    <p class="card-label">Pull all 3 tabs</p>
+                    <p class="card-hint">to reveal your surprise</p>
+                    <div class="pull-indicators">
+                        <div class="pull-dot" id="dot1"></div>
+                        <div class="pull-dot" id="dot2"></div>
+                        <div class="pull-dot" id="dot3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Overlay -->
+    <div class="message-overlay" id="messageOverlay">
+        <div class="message-card">
+            <div class="msg-icon">💌</div>
+            <h2>You Are Amazing! 💕</h2>
+            <p class="msg-text">
+                Just a little reminder that you are<br>
+                <strong>loved, cherished, and truly special.</strong><br>
+                Every day with you is a gift,and forgive me 🙁 <br>
+                and this is just a tiny token of<br>
+                all the warmth you bring into the world. 🌷<br><br>
+                <span style="font-size:0.9rem;">— With all my heart 💗</span>
+            </p>
+            <button class="close-btn" id="closeBtn">✨ Close ✨</button>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ============ DOM ELEMENTS ============
+            const giftCard = document.getElementById('giftCard');
+            const tab1 = document.getElementById('tab1');
+            const tab2 = document.getElementById('tab2');
+            const tab3 = document.getElementById('tab3');
+            const dot1 = document.getElementById('dot1');
+            const dot2 = document.getElementById('dot2');
+            const dot3 = document.getElementById('dot3');
+            const messageOverlay = document.getElementById('messageOverlay');
+            const closeBtn = document.getElementById('closeBtn');
+            const particlesContainer = document.getElementById('particlesContainer');
+
+            // Track pulled tabs
+            const pulledTabs = new Set();
+
+            // ============ FLOATING PARTICLES BACKGROUND ============
+            const particleEmojis = ['💕', '✨', '🌸', '💖', '🩷', '💗', '💝', '🦋', '⭐', '🌷', '💐', '🎀', '💞', '❣️',
+                '🍬'
+            ];
+            const heartEmojis = ['💕', '💖', '💗', '💝', '💞', '🩷', '❣️', '💘', '💓', '♥️'];
+
+            function createFloatingParticle() {
+                const particle = document.createElement('span');
+                particle.classList.add('particle');
+                const isHeart = Math.random() < 0.5;
+                const isSparkle = !isHeart && Math.random() < 0.5;
+                particle.classList.add(isHeart ? 'heart' : isSparkle ? 'sparkle' : 'star');
+
+                if (isHeart) {
+                    particle.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+                    particle.style.fontSize = (14 + Math.random() * 22) + 'px';
+                    particle.style.animationDuration = (7 + Math.random() * 10) + 's';
+                } else if (isSparkle) {
+                    particle.textContent = '✨';
+                    particle.style.fontSize = (8 + Math.random() * 16) + 'px';
+                    particle.style.animationDuration = (4 + Math.random() * 6) + 's';
+                } else {
+                    particle.textContent = particleEmojis[Math.floor(Math.random() * particleEmojis.length)];
+                    particle.style.fontSize = (10 + Math.random() * 18) + 'px';
+                    particle.style.animationDuration = (6 + Math.random() * 9) + 's';
+                }
+
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.opacity = '0';
+
+                particlesContainer.appendChild(particle);
+
+                // Remove after animation
+                const duration = parseFloat(particle.style.animationDuration) + parseFloat(particle.style
+                    .animationDelay);
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, duration * 1000 + 500);
+            }
+
+            // Spawn particles periodically
+            function spawnParticles() {
+                const count = 2 + Math.floor(Math.random() * 3);
+                for (let i = 0; i < count; i++) {
+                    setTimeout(() => createFloatingParticle(), i * 200);
+                }
+            }
+
+            // Initial burst
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => createFloatingParticle(), i * 300);
+            }
+            setInterval(spawnParticles, 1500);
+
+            // ============ SPARK BURST AT TAB LOCATION ============
+            function createSparkBurst(x, y, color) {
+                const sparkCount = 18;
+                const container = document.body;
+                for (let i = 0; i < sparkCount; i++) {
+                    const spark = document.createElement('span');
+                    spark.textContent = ['✨', '💫', '⭐', '🌟', '💖', '🩷'][Math.floor(Math.random() * 6)];
+                    spark.style.position = 'fixed';
+                    spark.style.left = x + 'px';
+                    spark.style.top = y + 'px';
+                    spark.style.fontSize = (10 + Math.random() * 20) + 'px';
+                    spark.style.pointerEvents = 'none';
+                    spark.style.zIndex = '150';
+                    spark.style.transition = 'all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    spark.style.opacity = '1';
+                    container.appendChild(spark);
+
+                    const angle = (Math.PI * 2 * i) / sparkCount;
+                    const distance = 50 + Math.random() * 80;
+                    const dx = Math.cos(angle) * distance;
+                    const dy = Math.sin(angle) * distance;
+
+                    requestAnimationFrame(() => {
+                        spark.style.transform = `translate(${dx}px, ${dy}px) rotate(${Math.random() * 360}deg) scale(0.2)`;
+                        spark.style.opacity = '0';
+                    });
+
+                    setTimeout(() => spark.remove(), 950);
+                }
+            }
+
+            // ============ PULL TAB LOGIC ============
+            function handleTabPull(tabElement, tabNumber, dotElement) {
+                if (pulledTabs.has(tabNumber)) return; // Already pulled
+
+                // Mark as pulled
+                pulledTabs.add(tabNumber);
+                tabElement.classList.add('pulled');
+                dotElement.classList.add('done');
+
+                // Get tab position for spark burst
+                const rect = tabElement.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                createSparkBurst(cx, cy, '#ff6b9d');
+
+                // Shake the card slightly
+                giftCard.style.transition = 'transform 0.15s ease';
+                giftCard.style.transform = 'translateX(-3px)';
+                setTimeout(() => {
+                    giftCard.style.transform = 'translateX(3px)';
+                    setTimeout(() => {
+                        giftCard.style.transform = 'translateX(0)';
+                        setTimeout(() => {
+                            giftCard.style.transition =
+                                'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                        }, 150);
+                    }, 100);
+                }, 100);
+
+                // Play a subtle sound-like visual feedback
+                const cardIllustration = giftCard.querySelector('.card-illustration');
+                cardIllustration.style.transform = 'scale(1.3)';
+                setTimeout(() => {
+                    cardIllustration.style.transform = 'scale(1)';
+                }, 200);
+
+                // Update hint text
+                const remaining = 3 - pulledTabs.size;
+                const cardHint = giftCard.querySelector('.card-hint');
+                const cardLabel = giftCard.querySelector('.card-label');
+                if (remaining > 0) {
+                    cardLabel.textContent = `${remaining} more to go!`;
+                    cardHint.textContent = 'You\'re almost there...';
+                }
+
+                // Check if all 3 pulled
+                if (pulledTabs.size === 3) {
+                    setTimeout(() => revealMessage(), 600);
+                }
+            }
+
+            // ============ REVEAL MESSAGE ============
+            function revealMessage() {
+                // Update card
+                const cardLabel = giftCard.querySelector('.card-label');
+                const cardHint = giftCard.querySelector('.card-hint');
+                const cardIllustration = giftCard.querySelector('.card-illustration');
+                cardLabel.textContent = '🎉 Surprise! 🎉';
+                cardHint.textContent = '';
+                cardIllustration.textContent = '💝';
+
+                // Add revealed class
+                giftCard.classList.add('revealed');
+
+                // Massive spark burst from center of card
+                const cardRect = giftCard.getBoundingClientRect();
+                const ccx = cardRect.left + cardRect.width / 2;
+                const ccy = cardRect.top + cardRect.height / 2;
+                for (let b = 0; b < 3; b++) {
+                    setTimeout(() => createSparkBurst(ccx + (Math.random() - 0.5) * 60, ccy + (Math.random() - 0.5) *
+                        60, '#ff6b9d'), b * 150);
+                }
+
+                // Confetti!
+                launchConfetti();
+
+                // Show overlay after a short delay
+                setTimeout(() => {
+                    messageOverlay.classList.add('active');
+                    // Reset message card animations
+                    const msgIcon = messageOverlay.querySelector('.msg-icon');
+                    const msgH2 = messageOverlay.querySelector('h2');
+                    const msgText = messageOverlay.querySelector('.msg-text');
+                    const closeBtnEl = messageOverlay.querySelector('.close-btn');
+                    [msgIcon, msgH2, msgText, closeBtnEl].forEach(el => {
+                        el.style.animation = 'none';
+                        el.offsetHeight;
+                        el.style.animation = '';
+                    });
+                }, 500);
+
+                // Extra floating hearts burst
+                for (let i = 0; i < 20; i++) {
+                    setTimeout(() => {
+                        const h = document.createElement('span');
+                        h.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+                        h.style.cssText = `
+                            position: fixed;
+                            left: ${ccx + (Math.random()-0.5)*300}px;
+                            top: ${ccy}px;
+                            font-size: ${18 + Math.random()*30}px;
+                            pointer-events: none;
+                            z-index: 180;
+                            transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                            opacity: 1;
+                        `;
+                        document.body.appendChild(h);
+                        requestAnimationFrame(() => {
+                            h.style.transform =
+                                `translate(${(Math.random()-0.5)*250}px, ${-200 - Math.random()*300}px) rotate(${Math.random()*360}deg) scale(0)`;
+                            h.style.opacity = '0';
+                        });
+                        setTimeout(() => h.remove(), 1600);
+                    }, i * 40);
+                }
+            }
+
+            // ============ CONFETTI ============
+            function launchConfetti() {
+                const colors = [
+                    '#ff6b9d', '#ff8fab', '#ffb3c6', '#ffd1dc', '#ffe4ec',
+                    '#f7c948', '#ffb347', '#ff9db5', '#ff7da8', '#e8537c',
+                    '#ff6090', '#f06280', '#ffccd5', '#ffb8d0', '#ffc2d1',
+                    '#fff0f3', '#ffcad4', '#f8bbd0', '#f48fb1', '#ff80ab'
+                ];
+                const shapes = ['●', '■', '▲', '★', '♥', '♦', '🌸', '🎀', '💖', '✨'];
+
+                const container = document.body;
+                for (let i = 0; i < 80; i++) {
+                    const piece = document.createElement('span');
+                    piece.classList.add('confetti-piece');
+                    piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                    piece.style.left = Math.random() * 100 + '%';
+                    piece.style.top = -(10 + Math.random() * 60) + 'px';
+                    piece.style.fontSize = (8 + Math.random() * 18) + 'px';
+                    piece.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    piece.style.animationDuration = (2.5 + Math.random() * 4) + 's';
+                    piece.style.animationDelay = Math.random() * 1.5 + 's';
+                    piece.style.position = 'fixed';
+                    piece.style.zIndex = '200';
+                    piece.style.pointerEvents = 'none';
+                    container.appendChild(piece);
+
+                    setTimeout(() => piece.remove(), 6000);
+                }
+            }
+
+            // ============ EVENT LISTENERS ============
+            tab1.addEventListener('click', (e) => {
+                e.stopPropagation();
+                handleTabPull(tab1, 1, dot1);
+            });
+            tab2.addEventListener('click', (e) => {
+                e.stopPropagation();
+                handleTabPull(tab2, 2, dot2);
+            });
+            tab3.addEventListener('click', (e) => {
+                e.stopPropagation();
+                handleTabPull(tab3, 3, dot3);
+            });
+
+            // Close overlay
+            closeBtn.addEventListener('click', () => {
+                messageOverlay.classList.remove('active');
+                // Small sparkle on close
+                const btnRect = closeBtn.getBoundingClientRect();
+                createSparkBurst(btnRect.left + btnRect.width / 2, btnRect.top + btnRect.height / 2, '#ff6b9d');
+            });
+
+            // Close overlay when clicking outside the message card
+            messageOverlay.addEventListener('click', (e) => {
+                if (e.target === messageOverlay) {
+                    messageOverlay.classList.remove('active');
+                    const overlayRect = messageOverlay.getBoundingClientRect();
+                    createSparkBurst(e.clientX, e.clientY, '#ff6b9d');
+                }
+            });
+
+            // Keyboard close
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && messageOverlay.classList.contains('active')) {
+                    messageOverlay.classList.remove('active');
+                }
+            });
+
+            // ============ INITIAL SETUP ============
+            console.log('💌 Gift Card ready! Pull all 3 tabs to reveal your special message. ✨');
+            console.log('   Tab 1 (right) → Tab 2 (left) → Tab 3 (bottom) → 🎉 Surprise!');
+
+        })();
+    </script>
+</body>
+</html>
